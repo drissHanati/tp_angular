@@ -1,0 +1,28 @@
+<div class="component-boundary" #componentboundary [style.background-color]="backgroundColor">
+
+    <div class="component-box"  *ngFor="let div of divs" cdkDragBoundary=".component-boundary" cdkDrag>
+      <div class="divType"> click to upload {{div.type}} <button (click)="deleteDiv(div)">X</button></div>
+      <div class="imageDisplay" (click)="openImageUploadDialog(div)">  <img [src]="div.fileImageSrc"  /> </div> 
+    </div>
+     
+
+  </div>
+  <div class="control_zone">
+     <div class="close_button">
+        <button mat-raised-button>Fermer</button>
+     </div>
+     <div class="other_buttons">
+        <button mat-raised-button (click)="openDialog()" >ARRIERE PLANS</button>
+        <button mat-raised-button (click)="openNav()">AJOUTER DES COMPOSANETES</button>
+     </div>
+
+  </div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a href="#" (click)="newImage()">image</a>
+  <a href="#" (click)="newVideo()">Video</a>
+</div>
+
+
+  

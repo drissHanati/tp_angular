@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>ARRIERE PLANS</h1>
+<div mat-dialog-content>
+    <p>image</p>
+    <form [formGroup]="myForm">
+ 
+    <div class="form-group">
+      <label for="file">File</label>
+      <input 
+          formControlName="file"
+          id="file" 
+          type="file" 
+          class="form-control"
+          (change)="onFileChange($event)">
+      <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+          <div *ngIf="f.file.errors">File is required.</div>
+      </div>
+  </div>
+</form>  
+  <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  </div>

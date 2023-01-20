@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>ARRIERE PLANS</h1>
+<div mat-dialog-content>
+    <p>Color</p>
+  
+    
+    <mat-card class="zone zone-picker">
+        <input [(ngModel)]="data.color" [value]="data.color"
+        [style.background]="data.color"
+        [(colorPicker)]="data.color"/>
+    </mat-card>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.color" cdkFocusInitial>Ok</button>
+  </div>
