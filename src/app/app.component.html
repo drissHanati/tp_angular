@@ -1,9 +1,10 @@
 <div class="component-boundary" #componentboundary [style.background-color]="backgroundColor">
 
     <div class="component-box"  *ngFor="let div of divs" cdkDragBoundary=".component-boundary" cdkDrag>
-      <div class="divType"> click to upload {{div.type}} <button (click)="deleteDiv(div)">X</button></div>
-      <div class="imageDisplay" (click)="openImageUploadDialog(div)">  <img [src]="div.fileImageSrc"  /> </div> 
-    </div>
+      <div class="divType" (click)="openImageUploadDialog(div)" > click to upload {{div.type}} <button (click)="deleteDiv(div)">X</button></div>
+      <div *ngIf="div.type == 'image'" class="imageDisplay" >  <img [src]="div.fileImageSrc"  /> </div> 
+      <div *ngIf="div.type == 'video'" class="imageDisplay" >  <video [src]="div.fileImageSrc"  controls></video> </div>
+   </div>
      
 
   </div>

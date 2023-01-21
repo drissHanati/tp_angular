@@ -109,6 +109,13 @@
     width: 380px;
     height: 300px;
   }
+
+  .imageDisplay video {
+    width: 380px;
+    height: 300px;
+  }
+
+  
   
   .divType {
       color: #a8a8a8bb;
